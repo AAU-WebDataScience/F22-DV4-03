@@ -31,7 +31,15 @@ g = Graph()
 
 #transform the list and append to Graph 
 
+'''
 
+WE HAVE MADE CHANGE HERE 
+08-03-2022
+
+As you can see here that each subject is the yelp_business link + a string, we wonder if this way is correct.
+We have testet that a link works.
+
+'''
 for i in data_business:
     if len(data_business[n]['name']) > 0 and data_business[n]['name'] != None:
         g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.legalName, Literal(data_business[n]['name'])))
