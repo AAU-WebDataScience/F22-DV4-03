@@ -39,8 +39,11 @@ yelp_business = Namespace("https://www.yelp.com/biz/")
 db_state = Namespace("http://dbpedia.org/resource/")
 
 g = Graph()
+final_list = []
 
-
+def list_distinct(new_list):
+    for element in new_list:
+        final_list.append(distinct.element)
 
 #transform the list and append to Graph 
 
@@ -79,9 +82,26 @@ def print_triple():
     #http://dbpedia.org/resource/United_States
     #https://dbpedia.org/page/California 
     #http://dbpedia.org/resource/California
+
+def string_seperate():
+    n = 0
+    for element in range(len(data_business)):
+        if data_business[n]['categories'] != None:
+            string = data_business[n]['categories']
+            a_list = string.split(", ")
+            for element in a_list:
+                if element not in final_list:
+                    final_list.append(element)
+        n = n + 1
+        
+string_seperate()
+print(len(final_list))
+#print(string_seperate(data_business[9]['categories']))
+
+#g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.starRating, Literal(data_business[n]['stars'])))
+
     
-    
-if __name__ == "__main__":
-    triple_maker()
-    g.serialize(format="xml", destination="business.xml")
+#if __name__ == "__main__":
+#    triple_maker()
+#    g.serialize(format="xml", destination="business.xml")
     
