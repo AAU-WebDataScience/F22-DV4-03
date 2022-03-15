@@ -95,7 +95,14 @@ def string_seperate():
         n = n + 1
         
 string_seperate()
-print(len(final_list))
+
+# importing pandas as pd  
+import pandas as pd  
+       
+df = pd.DataFrame(final_list) 
+    
+# saving the dataframe 
+df.to_csv('distinct_category_list.csv', index = False)
 #print(string_seperate(data_business[9]['categories']))
 
 #g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.starRating, Literal(data_business[n]['stars'])))
