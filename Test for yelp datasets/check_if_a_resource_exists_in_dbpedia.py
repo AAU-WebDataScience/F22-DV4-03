@@ -17,8 +17,6 @@ def check_exist_dbpedia(category):
         VALUES (?r) { (dbr:"""+str(category)+""") }
             { ?r ?p ?o }
             UNION
-            { ?s ?r ?o }
-            UNION
             { ?s ?p ?r }
         } 
                     """)
