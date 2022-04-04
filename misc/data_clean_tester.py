@@ -90,32 +90,196 @@ def no_specialchar_or_cusine():
 
 '''
 
-
-
-def add_line_to_empty_list():
+def sort_exist():
+    sortedList_x1 = []
     
-    newList = []
-        
+    existdbList = []
+    
+    notexistdbList = []
+    
     with open('distinct_no_specialchar.csv', newline='') as inputfile:
         for row in csv.reader(inputfile):
+            sortedList_x1.append(row[0])
+    '''      
+    for element in sortedList_x1:
+        if check_exist_dbpedia(element) == True:
+            existdbList.append(element)
+    '''
+    df_exist = pd.DataFrame(existdbList) 
+    
+    
+    for element in sortedList_x1:
+        if check_exist_dbpedia(element) == False:
+            notexistdbList.append(element)
+    
+    df_not_exist = pd.DataFrame(notexistdbList)
+
+
+    with open('distinct_with_specialchar.csv', newline='') as inputfile:
+        for row in csv.reader(inputfile):
+            sortedList_x1.append(row[0])
+            
+def add_line_to_emptylist():
+    newList = []
+    newList2 = []
+            
+    with open('category_notexist_in_db_List.csv', newline='') as inputfile:
+        for row in csv.reader(inputfile):
             newList.append(row[0])
+            newList2.append(row[0])
+            
     n = 0   
     for i in newList:  
-        newList[n] = newList[n].lower()
-        n = n +1
-        
-    n = 0
-    for i in newList:  
-        newList[n] = newList[n].capitalize()
-        n = n +1
-        
+            newList[n] = newList[n].lower()
+            n = n + 1
+            
     n = 0
     for i in newList:   
         newList[n] = newList[n].replace(" ", "_")
-        n = n +1
+        n = n + 1
             
-    df = pd.DataFrame(newList)
+    n = 0
+    for i in newList:  
+        newList[n] = newList[n].capitalize()
+        n = n + 1
     
-    df.to_csv('category_list_goodList_v2.csv', index = False)
+    
+    existList2 = pd.DataFrame(columns=['0', '1'])
+    notexistList2 = pd.DataFrame(columns=['0'])
+    
+    n = 0
+    for element in newList:
+        if check_exist_dbpedia(element) == True:
+            existList2 = existList2.append({'0': newList2[n], '1':element}, ignore_index=True)
+        elif check_exist_dbpedia(element) == False:
+            notexistList2 = notexistList2.append({'0':newList2[n]}, ignore_index=True)
+        n = n + 1
+        
+        
+    existList2.to_csv('category_exist_in_db_List_v2.csv', index = False)
+    notexistList2.to_csv('category_notexist_in_db_List_v2.csv', index = False)
 
-check_catagory_with_dbpedia()
+
+def string_seperate_special(string):
+    n = 0
+    split_list = []
+    a_list = string.split(" & ")
+    for element in a_list:
+        split_list.append(element)
+    n = n + 1
+    return split_list
+
+def change_to_line(string):
+#takes a string, change to lower case,
+#then replace empty space and change to line
+#capitalice first letter
+    string = string.lower()
+    string = string.replace(" ", "_")
+    string = string.capitalize()
+    return string
+
+def change_to_singular():
+    notexistList2v2 = pd.read_csv('category_notexist_in_db_List_v2.csv', header=None)
+    
+    from pattern.text.en import singularize
+    
+    singular_list = []
+    
+    n = 0
+    for index, row in notexistList2v2.iterrows():
+        singular_list.append(singularize(row[0]))
+        n = n + 1
+    
+    existListv3 = df = pd.DataFrame(columns=['0', '1'])
+    notexistListv3 = df = pd.DataFrame(columns=['0', '1'])
+    
+    
+    n = 0
+    for element in singular_list:
+        if check_exist_dbpedia(element) == True:
+            existListv3 = existListv3.append({'0': notexistList2v2[0][n],'1': element}, ignore_index=True)
+        elif check_exist_dbpedia(element) == False:
+            notexistListv3 = notexistListv3.append({'0':notexistList2v2[0][n], '1': element}, ignore_index=True)
+        n = n + 1
+    
+    existListv3.to_csv('category_exist_in_db_List_v3.csv', index = False)
+    notexistListv3.to_csv('category_notexist_in_db_List_v3.csv', index = False)
+
+
+def split_special():
+    notexistList_special_v1 = pd.read_csv('distinct_with_specialchar2.csv', header=None)
+    
+    special_character_1 = "/"
+    # Example: $tackoverflow
+    
+    sorted_special_list = pd.DataFrame(columns=['0', '1', '2'])
+    
+    n = 0
+    for index, row in notexistList_special_v1.iterrows():
+        string = row[0]
+        if any(c in special_character_1 for c in string):
+            list_1 = (row[0]).split("/")
+        else:
+            list_1 = (row[0]).split(" & ")
+        sorted_special_list = sorted_special_list.append({'0':row[0], '1': list_1[0],'2': list_1[1]}, ignore_index=True)
+        n = n + 1
+        
+    sorted_special_list.to_csv('category_special_sorted_List_v3.csv', index = False)
+
+def special_singular():
+    singel_special = pd.read_csv('category_special_sorted_List_v3.csv', header=None)
+    
+    from pattern.text.en import singularize
+    
+    n = 0
+    for index, row in singel_special.iterrows():
+        
+        sing_word = singularize(row[1])
+        singel_special.iat[n,1] = sing_word
+        sing_word = singularize(row[2])
+        singel_special.iat[n,2] = sing_word
+        
+        n = n +1
+    
+    singel_special.to_csv('category_special_singeled.csv', index = False)
+
+def special_add_lines():
+
+    addline_special = pd.read_csv('category_special_singeled.csv', header=None)
+    
+    n = 0
+    for index, row in addline_special.iterrows():
+        
+        sing_word = change_to_line(row[1])
+        addline_special.iat[n,1] = sing_word
+        sing_word = change_to_line(row[2])
+        addline_special.iat[n,2] = sing_word
+        
+        n = n +1
+    
+    addline_special.to_csv('category_special_withlines.csv', index = False)
+
+
+def special_exist_in_db():
+    exist_in_db = pd.read_csv('category_special_withlines.csv', header=None)
+    
+    existList_spv1 = pd.DataFrame(columns=['0','1','2'])
+    notexistList_spv1 = pd.DataFrame(columns=['0','1','2'])
+    
+    
+    n = 0
+    for index, row in exist_in_db.iterrows():
+        if check_exist_dbpedia(row[1]) == True and check_exist_dbpedia(row[2]) == True:
+            existList_spv1 = existList_spv1.append({'0':row[0], '1': row[1],'2': row[2]}, ignore_index=True)
+        elif check_exist_dbpedia(row[1]) == True and check_exist_dbpedia(row[2]) == False:
+            existList_spv1 = existList_spv1.append({'0':row[0], '1': row[1]}, ignore_index=True)
+            notexistList_spv1 = notexistList_spv1.append({'0':row[0],'2': row[2]}, ignore_index=True)
+        elif check_exist_dbpedia(row[1]) == False and check_exist_dbpedia(row[2]) == True:
+            existList_spv1 = existList_spv1.append({'0':row[0], '2': row[2]}, ignore_index=True)
+            notexistList_spv1 = notexistList_spv1.append({'0':row[0],'1': row[1]}, ignore_index=True)
+        else:
+            notexistList_spv1 = notexistList_spv1.append({'0':row[0], '1': row[1],'2': row[2]}, ignore_index=True)
+        n = n + 1
+    
+    existList_spv1.to_csv('category_special_exist_v1.csv', index = False)
+    notexistList_spv1.to_csv('category_special_notexist_v1.csv', index = False)

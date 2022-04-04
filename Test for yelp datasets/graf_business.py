@@ -18,7 +18,7 @@ data_business = []
 csvfile = []
 cuisineList = []
 existdbList = []
-noexistdbList = []
+specialList = []
 
 #open json file line for line
 #smaller size for original file yelp_academic_dataset_business_10000lines.json
@@ -32,13 +32,13 @@ with open('country_cusine_filtered_list.csv', newline='') as inputfile:
     for row in csv.reader(inputfile):
         cuisineList.append(row[0])
         
-with open('distinct_no_specialchar.csv', newline='') as inputfile:
+with open('category_exist_in_db_List.csv', newline='') as inputfile:
     for row in csv.reader(inputfile):
         existdbList.append(row[0])
         
 with open('distinct_with_specialchar.csv', newline='') as inputfile:
     for row in csv.reader(inputfile):
-        noexistdbList.append(row[0])
+        specialList.append(row[0])
 
 def string_seperate(string):
     n = 0
@@ -188,10 +188,10 @@ def triple_maker_cg_in_db_not_exist():
             for element in range(len(data_business[n]['categories'])):
                 catagory_list = string_seperate(data_business[element]['categories'])
                 #for every item in catagory_list, compare it with the cuisineList
-                for item in range(len(noexistdbList)):
+                for item in range(len(specialList)):
                     for element in range(len(catagory_list)):
-                        if catagory_list[element] == noexistdbList[item]:
-                            g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.category, Literal(noexistdbList[element])))
+                        if catagory_list[element] == specialList[item]:
+                            g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.category, Literal(specialList[element])))
         n = n + 1
 
 
@@ -204,7 +204,8 @@ def print_triple():
     #http://dbpedia.org/resource/United_States
     #https://dbpedia.org/page/California 
     #http://dbpedia.org/resource/California
-    
+
+'''
 triple_maker_name()
 triple_maker_address()
 triple_maker_state()
@@ -215,19 +216,5 @@ triple_maker_cg_cuisine()
 triple_maker_cg_in_db_exist()
 g.serialize(destination="Business_v1.ttl")
 print('done')
-
 '''
-       
-df = pd.DataFrame(final_list) 
-    
-#saving the dataframe 
-df.to_csv('distinct_category_list.csv', index = False)
-print(string_seperate(data_business[9]['categories']))
 
-g.add((URIRef(yelp_business + data_business[n]['business_id']), schema.starRating, Literal(data_business[n]['stars'])))
-
-    
-if __name__ == "__main__":
-    triple_maker()
-    g.serialize(format="xml", destination="business.xml")
-'''
