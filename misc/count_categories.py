@@ -12,7 +12,7 @@ import pandas as pd
 
 data_business = []
 
-with open('D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_business.json', encoding="utf8") as f:
+with open('C:/Users/pmplo/OneDrive/Skrivebord/Yelp data/yelp_academic_dataset_business.json', encoding="utf8") as f:
     for line in f:
         data_business.append(json.loads(line))
         
@@ -39,7 +39,7 @@ def string_seperate(string):
 
 
 
-with open('D:/Documents - HDD/GitHub/F22-DV4-03/Test for yelp datasets/distinct_category_list_1311.csv', mode='r') as infile:
+with open('C:/Users/pmplo/OneDrive/Dokumenter/F22-DV4-03/Test for yelp datasets/distinct_category_list_1311.csv', mode='r') as infile:
     reader = csv.reader(infile)
     with open('coors_new.csv', mode='w') as outfile:
         writer = csv.writer(outfile)
