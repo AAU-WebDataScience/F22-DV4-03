@@ -1,0 +1,35 @@
+Atmosphere,Amount
+'video': False,6283
+'background_music': False,6095
+'no_music': False,6087
+'dj': False,5911
+'karaoke': False,5461
+'jukebox': False,5348
+'live': False,4223
+'live': True,1886
+u'video': False,771
+u'background_music': False,771
+u'no_music': False,771
+'karaoke': None,771
+'jukebox': None,534
+u'karaoke': None,509
+u'live': False,474
+u'dj': False,447
+'jukebox': True,431
+u'jukebox': None,362
+'dj': None,354
+u'jukebox': False,351
+'dj': True,335
+u'dj': None,303
+u'karaoke': False,254
+'live': None,222
+'background_music': True,202
+u'live': True,150
+u'live': None,147
+,69
+'karaoke': True,67
+u'jukebox': True,58
+None,35
+u'dj': True,21
+'video': True,16
+u'karaoke': True,8
