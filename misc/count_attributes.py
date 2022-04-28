@@ -34,24 +34,59 @@ with open('D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_
 
 
 
+#Counts how many of each attribute that exists
+# mydict = {}
+# n = 0
+# attribute_list = []
+# value_list = []   
+# for i in data_business:
+#     if data_business[n]['attributes'] != None:
+#         keys, values = zip(*data_business[n]['attributes'].items())
+#         for element in keys:
+#             mydict[element] = mydict.get(element, 0) + 1
+#     n = n + 1
+#     if n % 1000 == 0:
+#         print(n)  
 
+# print(mydict)
+# df = pd.DataFrame(list(mydict.items()),columns = ['Attribute','Amount'])
+
+# df_sorted = df.sort_values(by='Amount', ascending=False)
+
+# df_sorted.to_csv('amount_of_attributes.csv', index=False) 
+
+
+       
+# n = 0
+# big_string = ""
+# for i in data_business:
+#     if data_business[n]['attributes'] != None:
+#         big_string = big_string + str(data_business[n]['attributes'])   
+#     n = n + 1
+#     if n % 1000 == 0:
+#         print(n)  
+
+# print(big_string)
+
+
+
+#Counts how many of each attribute that exists
 mydict = {}
 n = 0
 attribute_list = []
 value_list = []   
 for i in data_business:
-    if data_business[n]['attributes'] != None:
-        keys, values = zip(*data_business[n]['attributes'].items())
-        for element in keys:
-            mydict[element] = mydict.get(element, 0) + 1
-    n = n + 1
-    if n % 1000 == 0:
-        print(n)  
+    try:
+        values = data_business[n]['attributes']['Alcohol']
+        mydict[values] = mydict.get(values, 0) + 1
+        n = n + 1
+        if n % 1000 == 0:
+            print(n)
+    except:
+        n = n + 1
+        if n % 1000 == 0:
+            print(n)
         
+
         
 print(mydict)
-df = pd.DataFrame(list(mydict.items()),columns = ['Attribute','Amount'])
-
-df_sorted = df.sort_values(by='Amount', ascending=False)
-
-df_sorted.to_csv('amount_of_attributes.csv', index=False) 
