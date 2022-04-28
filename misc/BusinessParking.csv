@@ -1,31 +1,31 @@
-Atmosphere,Amount
-'valet': False,83074
-'validated': False,82577
-'garage': False,79676
-'street': False,60934
-'lot': True,42059
-'lot': False,41331
-'street': True,21895
-u'valet': False,4263
-'garage': True,3810
-u'validated': False,3238
-u'garage': False,3069
-None,2271
-u'lot': True,2188
-u'street': None,1669
-'street': None,1650
-u'street': False,1514
-'valet': True,1407
-u'lot': None,1188
-u'street': True,1131
-'lot': None,1089
-'validated': None,1087
-u'validated': None,1052
-'garage': None,1004
-u'lot': False,938
-u'garage': None,915
-'validated': True,815
-u'garage': True,330
-u'valet': True,51
-u'validated': True,24
-,8
+Atmosphere,Amount,,,,,BusinessParking,Amount,True,False,None
+'garage': False,79676,,,,,garage,84490,3810,79676,1004
+'garage': None,1004,,,,,u'garage,4314,330,3069,915
+'garage': True,3810,,,,,lot,84479,42059,41331,1089
+'lot': False,41331,,,,,u'lot,4314,2188,938,1188
+'lot': None,1089,,,,,street,84479,21895,60934,1650
+'lot': True,42059,,,,,u'street,4314,1131,1514,1669
+None,2271,,,,,valet,84481,1407,83074,
+'street': False,60934,,,,,u'valet,4314,51,4263,
+'street': None,1650,,,,,validated,84479,815,82577,1087
+'street': True,21895,,,,,u'validated,4314,24,3238,1052
+u'garage': False,3069,,,,,None,2271,,,
+u'garage': None,915,,,,,Total,446249,73710,360614,9654
+u'garage': True,330,,,,,,,,,
+u'lot': False,938,,,,,,,,,
+u'lot': None,1188,,,,,,,,,
+u'lot': True,2188,,,,,,,,,
+u'street': False,1514,,,,,,,,,
+u'street': None,1669,,,,,,,,,
+u'street': True,1131,,,,,,,,,
+u'valet': False,4263,,,,,,,,,
+u'valet': True,51,,,,,,,,,
+u'validated': False,3238,,,,,,,,,
+u'validated': None,1052,,,,,,,,,
+u'validated': True,24,,,,,,,,,
+'valet': False,83074,,,,,,,,,
+'valet': True,1407,,,,,,,,,
+'validated': False,82577,,,,,,,,,
+'validated': None,1087,,,,,,,,,
+'validated': True,815,,,,,,,,,
+,8,,,,,,,,,
