@@ -1,0 +1,30 @@
+Atmosphere,Amount
+'monday': False,4592
+'tuesday': False,4463
+'sunday': False,4461
+'wednesday': False,4339
+'thursday': False,3714
+'friday': True,2947
+'saturday': True,2935
+'saturday': False,2242
+'friday': False,2230
+'thursday': True,1463
+'wednesday': True,838
+'sunday': True,716
+'tuesday': True,714
+'monday': True,585
+u'monday': False,464
+u'wednesday': False,462
+u'sunday': False,452
+u'tuesday': False,444
+u'thursday': False,435
+u'friday': False,363
+u'saturday': False,349
+u'saturday': True,157
+u'friday': True,143
+u'thursday': True,71
+u'tuesday': True,62
+u'sunday': True,54
+u'wednesday': True,44
+u'monday': True,42
+None,11

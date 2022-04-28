@@ -1,0 +1,15 @@
+Atmosphere,Amount
+'kosher': False,30
+'halal': False,29
+'soy-free': False,26
+'dairy-free': False,24
+'gluten-free': True,19
+'vegan': False,16
+'vegetarian': True,15
+'vegetarian': False,15
+'vegan': True,14
+'gluten-free': False,11
+'dairy-free': True,6
+'soy-free': True,4
+None,1
+'halal': True,1

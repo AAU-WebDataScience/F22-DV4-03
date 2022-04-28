@@ -23,14 +23,17 @@ with open('D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_
 
 
 
-# def string_seperate(string):
-#     n = 0
-#     cate_list = []
-#     a_list = string.split(", ")
-#     for element in a_list:
-#         cate_list.append(element)
-#     n = n +1
-#     return cate_list
+def string_seperate(string):
+    n = 0
+    cate_list = []
+    string = string.replace('"','')
+    string = string.replace('}','')
+    string = string.replace('{','')
+    a_list = string.split(", ")
+    for element in a_list:
+        cate_list.append(element)
+    n = n +1
+    return cate_list
 
 
 
@@ -68,25 +71,29 @@ with open('D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_
 
 # print(big_string)
 
+# values = data_business[11]['attributes']['Ambience']['hipster']
 
-
-#Counts how many of each attribute that exists
+# print(values)
+# Counts how many of each attribute that exists
 mydict = {}
 n = 0
 attribute_list = []
 value_list = []   
 for i in data_business:
     try:
-        values = data_business[n]['attributes']['ByAppointmentOnly']
-        mydict[values] = mydict.get(values, 0) + 1
+        catagory_list = string_seperate(data_business[n]['attributes']['DietaryRestrictions'])
+        for element in catagory_list:
+            mydict[element] = mydict.get(element, 0) + 1
         n = n + 1
         if n % 1000 == 0:
-            print(n)
+            print(str(round(n/1500,2))+"% done")
     except:
         n = n + 1
         if n % 1000 == 0:
-            print(n)
+            print(str(round(n/1500,2))+"% done")
         
+df = pd.DataFrame(list(mydict.items()),columns = ['Atmosphere','Amount'])
 
-        
-print(mydict)
+df_sorted = df.sort_values(by='Amount', ascending=False)
+
+df_sorted.to_csv('DietaryRestrictions.csv', index=False) 
