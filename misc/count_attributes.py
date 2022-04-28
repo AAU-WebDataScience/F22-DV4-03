@@ -77,7 +77,7 @@ attribute_list = []
 value_list = []   
 for i in data_business:
     try:
-        values = data_business[n]['attributes']['Alcohol']
+        values = data_business[n]['attributes']['RestaurantsTableService']
         mydict[values] = mydict.get(values, 0) + 1
         n = n + 1
         if n % 1000 == 0:
