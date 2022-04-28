@@ -15,7 +15,7 @@ data_business = []
 #full data - D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_business.json
 
 
-with open('D:/ONEDRIVE_FREE_FOLDER/Uni-Datavidenskab/YELP/yelp_academic_dataset_business.json', encoding="utf8") as f:
+with open('C:/Users/pmplo/OneDrive/Skrivebord/Yelp data/yelp_academic_dataset_business.json', encoding="utf8") as f:
     for line in f:
         data_business.append(json.loads(line))
         
@@ -28,6 +28,7 @@ def string_seperate(string):
     n = n +1
     return cate_list
 
+
 # def count_categories():
 #     n = 0
 #     for i in data_business:
@@ -39,12 +40,13 @@ def string_seperate(string):
 #         if n % 1000 == 0:
 #             print(n)
             
-# count_cities()
+# count_cities()    
 n = 0
 cities_list = []
 for i in data_business:
     cities_list.append(data_business[n]['city'])
     n = n + 1
+
 
 print(cities_list)
 print(len(cities_list))
