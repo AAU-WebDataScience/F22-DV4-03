@@ -1,3 +1,4 @@
+sep=,
 Atmosphere,Amount,,,,DietaryRestrictions,Amount,True,False
 'dairy-free': False,24,,,,dairy-free,30,6,24
 'dairy-free': True,6,,,,gluten-free,30,19,11
