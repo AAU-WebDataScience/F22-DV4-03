@@ -1,35 +1,35 @@
-Atmosphere;Amount;;;;;;;;;
-'background_music': False;6095;;;;;;;;;
-'background_music': True;;;;;;;;;;
-'dj': False;5911;;;;;;;;;
-'dj': None;354;;;;;;;;;
-'dj': True;335;;;;;Music;Amount;True;False;None
-'jukebox': False;5348;;;;;backgound_music;6297;202;6095;
-'jukebox': None;534;;;;;u'backgound_music;771;;771;
-'jukebox': True;431;;;;;dj;6600;335;5911;354
-'karaoke': False;5461;;;;;u'dj;771;21;447;303
-'karaoke': None;771;;;;;jukebox;6313;431;5348;534
-'karaoke': True;67;;;;;u'jukebox;771;58;351;362
-'live': False;4223;;;;;karaoke;6299;67;5461;771
-'live': None;222;;;;;u'karaoke;771;8;254;509
-'live': True;1886;;;;;live;6331;1886;4223;222
-'no_music': False;6087;;;;;u'live;771;150;474;147
-None;35;;;;;no_music;6087;;6087;
-u'background_music': False;771;;;;;u'no_music;771;;771;
-u'dj': False;447;;;;;video;6299;16;6283;
-u'dj': None;303;;;;;u'video;771;;771;
-u'dj': True;21;;;;;None;35;;;35
-u'jukebox': False;351;;;;;Total;49658;3174;43247;3237
-u'jukebox': None;362;;;;;;;;;
-u'jukebox': True;58;;;;;;;;;
-u'karaoke': False;254;;;;;;;;;
-u'karaoke': None;509;;;;;;;;;
-u'karaoke': True;8;;;;;;;;;
-u'live': False;474;;;;;;;;;
-u'live': None;147;;;;;;;;;
-u'live': True;150;;;;;;;;;
-u'no_music': False;771;;;;;;;;;
-u'video': False;771;;;;;;;;;
-'video': False;6283;;;;;;;;;
-'video': True;16;;;;;;;;;
-;69;;;;;;;;;
+Atmosphere,Amount,,,,,,,,,,,,,,,,
+'background_music': False,6095,,,,,,,,,,,,,,,,
+'background_music': True,,,,,,,,,,,,,,,,,
+'dj': False,5911,,,,,,,,,,,,,,,,
+'dj': None,354,,,,,,,,,,,,,,,,
+'dj': True,335,,,,,Music,Amount,True,False,None,,,Music,Amount,True,False,None
+'jukebox': False,5348,,,,,backgound_music,6297,202,6095,,,,background_music,7068,202,6866,0
+'jukebox': None,534,,,,,u'backgound_music,771,,771,,,,dj,7371,356,6358,657
+'jukebox': True,431,,,,,dj,6600,335,5911,354,,,jukebox,7084,489,5699,896
+'karaoke': False,5461,,,,,u'dj,771,21,447,303,,,karaoke,7070,75,5715,1280
+'karaoke': None,771,,,,,jukebox,6313,431,5348,534,,,live,7102,2036,4697,369
+'karaoke': True,67,,,,,u'jukebox,771,58,351,362,,,no_music,6858,0,6858,0
+'live': False,4223,,,,,karaoke,6299,67,5461,771,,,video,7070,16,7054,0
+'live': None,222,,,,,u'karaoke,771,8,254,509,,,None,35,,,
+'live': True,1886,,,,,live,6331,1886,4223,222,,,Total,49658,3174,43247,3202
+'no_music': False,6087,,,,,u'live,771,150,474,147,,,,,,,
+None,35,,,,,no_music,6087,,6087,,,,,,,,
+u'background_music': False,771,,,,,u'no_music,771,,771,,,,,,,,
+u'dj': False,447,,,,,video,6299,16,6283,,,,,,,,
+u'dj': None,303,,,,,u'video,771,,771,,,,,,,,
+u'dj': True,21,,,,,None,35,,,,,,,,,,
+u'jukebox': False,351,,,,,Total,49658,3174,43247,3202,,,,,,,
+u'jukebox': None,362,,,,,,,,,,,,,,,,
+u'jukebox': True,58,,,,,,,,,,,,,,,,
+u'karaoke': False,254,,,,,,,,,,,,,,,,
+u'karaoke': None,509,,,,,,,,,,,,,,,,
+u'karaoke': True,8,,,,,,,,,,,,,,,,
+u'live': False,474,,,,,,,,,,,,,,,,
+u'live': None,147,,,,,,,,,,,,,,,,
+u'live': True,150,,,,,,,,,,,,,,,,
+u'no_music': False,771,,,,,,,,,,,,,,,,
+u'video': False,771,,,,,,,,,,,,,,,,
+'video': False,6283,,,,,,,,,,,,,,,,
+'video': True,16,,,,,,,,,,,,,,,,
+,69,,,,,,,,,,,,,,,,
