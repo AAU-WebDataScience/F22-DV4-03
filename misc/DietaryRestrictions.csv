@@ -1,0 +1,15 @@
+Atmosphere;Amount;;;;DietaryRestrictions;Amount;True;False
+'dairy-free': False;24;;;;dairy-free;30;6;24
+'dairy-free': True;6;;;;gluten-free;30;19;11
+'gluten-free': False;11;;;;halal;30;1;29
+'gluten-free': True;19;;;;kosher;30;;30
+'halal': False;29;;;;soy-free;30;4;26
+'halal': True;1;;;;vegan;30;14;16
+'kosher': False;30;;;;vegetarian;30;15;15
+None;1;;;;None;1;;
+'soy-free': False;26;;;;Total;211;59;151
+'soy-free': True;4;;;;;;;
+'vegan': False;16;;;;;;;
+'vegan': True;14;;;;;;;
+'vegetarian': False;15;;;;;;;
+'vegetarian': True;15;;;;;;;

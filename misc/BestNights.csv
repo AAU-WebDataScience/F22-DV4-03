@@ -1,0 +1,30 @@
+Atmosphere;Amount;;;;;Best Nights;Amount;True;False;;Best Night;Amount;True;False
+'monday': False;4592;;;;;monday;5177;585;4592;;monday;5683;627;5056
+'tuesday': False;4463;;;;;tuesday;5177;714;4463;;tuesday;5683;776;4907
+'sunday': False;4461;;;;;wednesday;5177;838;4339;;wednesday;5683;882;4801
+'wednesday': False;4339;;;;;thursday;5177;1463;3714;;thursday;5683;1534;4149
+'thursday': False;3714;;;;;friday;5177;2947;2230;;friday;5683;3090;2593
+'friday': True;2947;;;;;saturday;5177;2935;2242;;saturday;5683;6027;2591
+'saturday': True;2935;;;;;sunday;5177;716;4461;;sunday;5683;770;4913
+'saturday': False;2242;;;;;u'monday;506;42;464;;;;;
+'friday': False;2230;;;;;u'tuesday;506;62;444;;;;;
+'thursday': True;1463;;;;;u'wednesday;506;44;462;;;;;
+'wednesday': True;838;;;;;u'thursday;506;71;435;;;;;
+'sunday': True;716;;;;;u'friday;506;143;363;;;;;
+'tuesday': True;714;;;;;u'saturday;506;157;349;;;;;
+'monday': True;585;;;;;u'sunday;506;54;452;;;;;
+u'monday': False;464;;;;;None;11;;;;;;;
+u'wednesday': False;462;;;;;Total;39792;10771;29010;;;;;
+u'sunday': False;452;;;;;;;;;;;;;
+u'tuesday': False;444;;;;;;;;;;;;;
+u'thursday': False;435;;;;;;;;;;;;;
+u'friday': False;363;;;;;;;;;;;;;
+u'saturday': False;349;;;;;;;;;;;;;
+u'saturday': True;157;;;;;;;;;;;;;
+u'friday': True;143;;;;;;;;;;;;;
+u'thursday': True;71;;;;;;;;;;;;;
+u'tuesday': True;62;;;;;;;;;;;;;
+u'sunday': True;54;;;;;;;;;;;;;
+u'wednesday': True;44;;;;;;;;;;;;;
+u'monday': True;42;;;;;;;;;;;;;
+None;11;;;;;;;;;;;;;
