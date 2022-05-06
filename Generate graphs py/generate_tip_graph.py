@@ -30,16 +30,16 @@ g = Graph()
 
 def tip_author_rdf(): #schema.author
     n = 0
-    for i in data_tip:
+    for i in data_tip[:5]:
         if len(data_tip[n]['text']) > 0 and data_tip[n]['user_id'] != None:
-            g.add((BNode(data_tip[n]['text']), 
+            g.add((URIRef(yelp_user + data_tip[n]['user_id']),
                    schema.author, 
-                   URIRef(yelp_user + data_tip[n]['user_id'])))
+                   BNode(data_tip[n]['text'])))
         n += 1
          
 def tip_about_biz_rdf(): #schema.about
     n = 0
-    for i in data_tip:
+    for i in data_tip[:50]:
         if len(data_tip[n]['text']) > 0 and data_tip[n]['business_id'] != None:
             g.add((BNode(data_tip[n]['text']), 
                    schema.about, 
@@ -57,7 +57,7 @@ def date_tip_created_rdf(): #Date of tip
 
 def tip_cmplm_count_rdf(): #Num of compliments received by a tip
     n = 0
-    for i in data_tip[:50]:
+    for i in data_tip:
         if len(data_tip[n]['text']) > 0 and data_tip[n]['compliment_count'] != None: #This also generates objects where the count = 0
             g.add((BNode(data_tip[n]['text']), 
                    URIRef(yelp_tip + "compliment_count"), 
