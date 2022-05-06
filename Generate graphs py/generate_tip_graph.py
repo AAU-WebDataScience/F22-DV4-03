@@ -30,7 +30,7 @@ g = Graph()
 
 def tip_author_rdf(): #schema.author
     n = 0
-    for i in data_tip[:5]:
+    for i in data_tip:
         if len(data_tip[n]['text']) > 0 and data_tip[n]['user_id'] != None:
             g.add((URIRef(yelp_user + data_tip[n]['user_id']),
                    schema.author, 
@@ -39,7 +39,7 @@ def tip_author_rdf(): #schema.author
          
 def tip_about_biz_rdf(): #schema.about
     n = 0
-    for i in data_tip[:50]:
+    for i in data_tip:
         if len(data_tip[n]['text']) > 0 and data_tip[n]['business_id'] != None:
             g.add((BNode(data_tip[n]['text']), 
                    schema.about, 
