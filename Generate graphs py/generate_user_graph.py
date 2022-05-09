@@ -196,11 +196,11 @@ print(end2 - start)
 yelping_since_rdf()
 end3 = time.time()
 print(end3 - start)
-'''
+
 friends_rdf()
 end4 = time.time()
 print(end4)
-'''
+
 useful_votes_gvn_rdf()
 end5 = time.time()
 print(end5 - start)
@@ -232,7 +232,7 @@ print(end11 - start)
 #1987897
 
 #change this:
-g.serialize(destination="user_graph_no_friends0_2k.ttl")
+g.serialize(destination="user_graph.ttl")
 end12 = time.time()
 print(end12 - start)
 
