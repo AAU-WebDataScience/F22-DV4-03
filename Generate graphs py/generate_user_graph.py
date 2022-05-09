@@ -9,6 +9,10 @@ import json
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import XSD
 
+import time
+
+start = time.time()
+
 #list to save the data for each user
 data_user = []
 
@@ -16,6 +20,18 @@ data_user = []
 with open('yelp_academic_dataset_user.json', encoding="utf8") as f:
     for line in f:
         data_user.append(json.loads(line))
+'''
+data_user = data_user_original[0:20000]
+data_user_v2 = data_user[20000:40000]
+data_user_v3 = data_user[20000:20000]
+data_user_v4 = data_user[0:20000]
+data_user_v5 = data_user[0:20000]
+data_user_v6 = data_user[0:20000]
+data_user_v7 = data_user[0:20000]
+data_user_v8 = data_user[0:20000]
+data_user_v9 = data_user[0:20000]
+data_user_v10 = data_user[0:20000]
+'''
 
 #schema.org prefix
 schema = Namespace("https://schema.org/")
@@ -165,17 +181,60 @@ def years_w_elite_status_rdf(): #using a custom property URI
                        URIRef(yelp_user_root + "elite"), 
                        Literal(elem, datatype=XSD.year)))
 
+start1 = time.time()
+print(start1 - start)
+
+
 given_name_rdf()
+end1 = time.time()
+print(end1 - start)
+
 revw_count_rdf()
+end2 = time.time()
+print(end2 - start)
+
 yelping_since_rdf()
+end3 = time.time()
+print(end3 - start)
+'''
 friends_rdf()
+end4 = time.time()
+print(end4)
+'''
 useful_votes_gvn_rdf()
+end5 = time.time()
+print(end5 - start)
+
 funny_votes_gvn_rdf()
+end6 = time.time()
+print(end6 - start)
+
 cool_votes_gvn_rdf()
+end7 = time.time()
+print(end7 - start)
+
 fans_votes_rcvd_rdf()
+end8 = time.time()
+print(end8 - start)
+
 cmplm_rcvd_rdf(cmplm_lst)
+end9 = time.time()
+print(end9 - start)
+
 avg_stars_gvn_rdf()
+end10 = time.time()
+print(end10 - start)
+
 years_w_elite_status_rdf()
+end11 = time.time()
+print(end11 - start)
+
+#1987897
 
 #change this:
-g.serialize(format="xml", destination="user_graph.xml")
+g.serialize(destination="user_graph_no_friends0_2k.ttl")
+end12 = time.time()
+print(end12 - start)
+
+total_time = (end1 + end2 + end3 + end5 + end6 + end7 + end8 + end9 + end10 + end11 + end12) - start - start1
+print("\n"+ str(total_time))
