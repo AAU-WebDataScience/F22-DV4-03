@@ -236,5 +236,5 @@ g.serialize(destination="user_graph.ttl")
 end12 = time.time()
 print(end12 - start)
 
-total_time = (end1 + end2 + end3 + end5 + end6 + end7 + end8 + end9 + end10 + end11 + end12) - start - start1
+total_time = end12 - start1
 print("\n"+ str(total_time))
