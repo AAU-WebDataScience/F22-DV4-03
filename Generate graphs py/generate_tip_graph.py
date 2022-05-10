@@ -30,44 +30,31 @@ g = Graph()
 
 def tip_author_rdf(): #schema.author
     n = 0
-    for i in data_tip:
-        if len(data_tip[n]['text']) > 0 and data_tip[n]['user_id'] != None:
+    for i in data_tip[:10]:
+        bn = BNode(n)
+        if data_tip[n]['user_id'] != None:
             g.add((URIRef(yelp_user + data_tip[n]['user_id']),
                    schema.author, 
-                   BNode(data_tip[n]['text'])))
-        n += 1
-         
-def tip_about_biz_rdf(): #schema.about
-    n = 0
-    for i in data_tip:
-        if len(data_tip[n]['text']) > 0 and data_tip[n]['business_id'] != None:
-            g.add((BNode(data_tip[n]['text']), 
+                   bn))
+        if data_tip[n]['business_id'] != None:
+            g.add((bn, 
                    schema.about, 
                    URIRef(yelp_business + data_tip[n]['business_id'])))
-        n += 1
-
-def date_tip_created_rdf(): #Date of tip
-    n = 0
-    for i in data_tip:
-        if len(data_tip[n]['text']) > 0 and data_tip[n]['date'] != None:
-            g.add((BNode(data_tip[n]['text']), 
+        if data_tip[n]['date'] != None:
+            g.add((bn, 
                    schema.dateCreated, 
                    Literal(data_tip[n]['date'], datatype=XSD.dateTime)))
-        n += 1
-
-def tip_cmplm_count_rdf(): #Num of compliments received by a tip
-    n = 0
-    for i in data_tip:
-        if len(data_tip[n]['text']) > 0 and data_tip[n]['compliment_count'] != None: #This also generates objects where the count = 0
-            g.add((BNode(data_tip[n]['text']), 
+        if data_tip[n]['compliment_count'] != None: #This also generates objects where the count = 0
+            g.add((bn, 
                    URIRef(yelp_tip + "compliment_count"), 
                    Literal(data_tip[n]['compliment_count'], datatype=XSD.int)))
+        if data_tip[n]['text'] != None: #This also generates objects where the count = 0
+            g.add((bn, 
+                   schema.text, 
+                   Literal(data_tip[n]['text'], datatype=XSD.string)))
         n += 1
 
 tip_author_rdf()
-tip_about_biz_rdf()
-date_tip_created_rdf()
-tip_cmplm_count_rdf()
 
 #change this:
 g.serialize(format="xml", destination="tip_graph.xml")
