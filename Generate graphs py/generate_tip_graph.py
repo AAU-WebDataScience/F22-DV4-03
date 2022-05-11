@@ -49,11 +49,11 @@ with open('yelp_academic_dataset_tip.json', encoding="utf8") as f:
                    schema.text, 
                    Literal(line['text'], datatype=XSD.string)))
         
-        file_object = open('user.txt', 'a')
+        graph_text = open('user.txt', 'a')
         
         for s, p, o in g:
-            print(s+'  '+p+'  '+o)
-        file_object.close()
+            graph_text.write(s+'  '+p+'  '+o + '\n')
+        graph_text.close()
         gc.collect()
         
         n = n + 1
