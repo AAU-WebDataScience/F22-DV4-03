@@ -9,6 +9,7 @@ import json
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import XSD
 import gc
+import time
 
 #schema.org prefix
 schema = Namespace("https://schema.org/")
@@ -26,6 +27,7 @@ with open('yelp_academic_dataset_tip.json', encoding="utf8") as f:
         line = json.loads(line)
         bn = BNode(n)
         g = Graph()
+        
         if line["user_id"] != None:
             g.add((URIRef(yelp_user + line['user_id']),
                    schema.author, 
@@ -46,15 +48,15 @@ with open('yelp_academic_dataset_tip.json', encoding="utf8") as f:
             g.add((bn, 
                    schema.text, 
                    Literal(line['text'], datatype=XSD.string)))
-        g1 = Graph()
-        g1.parse("file1.ttl",format="turtle")        
         
-        g2 = g + g1
-            
-        g.serialize(format="ttl", destination="file1.ttl")
+        file_object = open('user.txt', 'a')
         
+        for s, p, o in g:
+            print(s+'  '+p+'  '+o)
+        file_object.close()
         gc.collect()
         
         n = n + 1
         
         print(n)
+        
