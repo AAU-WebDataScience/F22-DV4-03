@@ -14,8 +14,8 @@ https://git.its.aau.dk/CLAAUDIA/Compute_cloud_user_guides/src/branch/master/quic
 https://aaudk-my.sharepoint.com/:f:/g/personal/mausti20_student_aau_dk/EhgJLgDSifxPg73Qnso9y64BIf6IaFDdz_hFuNtMOiqX9w?e=OoP12N
 
 ### names of graphs
-'http://www.yelpkg.com/tip'
-'http://www.yelpkg.com/review'
-'http://www.yelpkg.com/user'
-'http://www.yelpkg.com/biz'
-'http://www.yelpkg.com/checkin'
+`http://www.yelpkg.com/tip`
+`http://www.yelpkg.com/review`
+`http://www.yelpkg.com/user`
+`http://www.yelpkg.com/biz`
+`http://www.yelpkg.com/checkin`
