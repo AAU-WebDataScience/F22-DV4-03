@@ -187,11 +187,6 @@ yelp_goodformeal = Namespace("https://www.yelp.com/kg/biz/goodformeal")
 yelp_bestnights = Namespace("https://www.yelp.com/kg/biz/bestnights")
 
 
-
-def graph_create_att():
-    print('x')
-
-
 if __name__ == "__main__":
     
     '''
@@ -206,7 +201,7 @@ if __name__ == "__main__":
     Creating graph to contain the tripple, that will be used to generate tripples
     '''
     
-    graph_file = open('business-yelp-test-kg.nt', 'a')
+    graph_file = open('yelp-kg_no_city.nt', 'a')
 
     '''
     Creating a dataframe for the state 
@@ -288,15 +283,14 @@ if __name__ == "__main__":
             something
             something            
             '''
-            
             '''
             if line['state'] !=None and line['city'] != None:
-                if return_dbpedia_URI(line['city'] + ',_' + code_to_state(line['state'])) != False:
-                    g.add((URIRef(yelp_business + line['business_id']), schema.starRating, URIRef(line['city'] + ',_' + code_to_state(line['state']))))
-                elif return_dbpedia_URI(line['city']) != False:
-                    g.add((URIRef(yelp_business + line['business_id']), schema.starRating, URIRef(line['city'], datatype=XSD.string)))
+                if return_dbpedia_URI(str(line['city'] + ',_' + code_to_state(line['state']))) != False:
+                    g.add((URIRef(yelp_business + line['business_id']), schema.City, URIRef(str(line['city'] + ',_' + code_to_state(line['state'])))))
+                elif return_dbpedia_URI(str(line['city'])) != False:
+                    g.add((URIRef(yelp_business + line['business_id']), schema.City, URIRef(str(code_to_state(line['city'])))))
                 else:
-                    g.add((URIRef(yelp_business + line['business_id']), schema.starRating, Literal(line['city'], datatype=XSD.string)))
+                    g.add((URIRef(yelp_business + line['business_id']), schema.City, Literal(line['city'], datatype=XSD.string)))
             '''
             '''
             the address is appended as yelp_URI(subject) + streetAddress(predicate) + literal(object)
@@ -318,10 +312,9 @@ if __name__ == "__main__":
             the address is appended as yelp_URI(subject) + streetAddress(predicate) + literal(object)
             '''
             if line['hours'] != None:
-                for times in line['hours']:
-                    g.add((URIRef(yelp_business + line['business_id']), schema.openingHours, Literal(times, datatype=XSD.string)))
+                for times in line['hours'].items():
+                    g.add((URIRef(yelp_business + line['business_id']), schema.openingHours, Literal(str(times), datatype=XSD.string)))
 
-            
             if line['attributes'] != None:
                 if line['attributes'].__contains__('RestaurantsTakeOut'):
                     if (line['attributes']['RestaurantsTakeOut']) == 'True':
