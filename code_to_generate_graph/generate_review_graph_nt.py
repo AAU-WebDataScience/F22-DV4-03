@@ -25,7 +25,7 @@ with open('yelp_academic_dataset_review.json', encoding="utf8") as f:
         line = line.encode("ascii", "ignore") #removing unicode characters
         line = json.loads(line) #reading in the line from the .json file
         g = Graph() #creating a graph
-        
+        #schema.orgitemReviewed
         if len(line['business_id']) > 0 and line['business_id'] != None:
             g.add((URIRef(yelp_user + line['user_id']), 
                    schema.itemReviewed, 
