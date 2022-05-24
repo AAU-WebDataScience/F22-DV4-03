@@ -16,6 +16,9 @@ The rdflib package has been used to create N-Triples (.nt).
 | Tip.json        | tip.nt          |http://www.yelpkg.com/tip    |
 | Checkin.json    | checkin.nt      |http://www.yelpkg.com/checkin|
 
+The database is based on Docker and Virtuoso. Matteo Lissandini has published instructions on how to create such a graph database at:
+https://people.cs.aau.dk/~matteo/notes/virtuoso-setup-on-docker.html
+
 ### Who and Where
 The project was developed by fourth semester students: 
 <ul>
@@ -31,20 +34,12 @@ Under the supervision of:
   <li> Matteo Lissandini https://people.cs.aau.dk/~matteo/ </li>
 </ul>
 
-During the spring of 2022.
+During the spring of 2022, at Aalborg University, Denmark.
 
 ### claaudia tutorial
 
 https://git.its.aau.dk/CLAAUDIA/Compute_cloud_user_guides/src/branch/master/quick-start.md
 
-
 ### key
 
 https://aaudk-my.sharepoint.com/:f:/g/personal/mausti20_student_aau_dk/EhgJLgDSifxPg73Qnso9y64BIf6IaFDdz_hFuNtMOiqX9w?e=OoP12N
-
-### names of graphs
-`http://www.yelpkg.com/tip`<br />
-`http://www.yelpkg.com/review`<br />
-`http://www.yelpkg.com/user`<br />
-`http://www.yelpkg.com/biz`<br />
-`http://www.yelpkg.com/checkin`
