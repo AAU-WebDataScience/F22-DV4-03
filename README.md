@@ -4,6 +4,14 @@ Repository for the project of group cs-22-dv-4-03
 The goal of the project is to create a knowledge graph from the yelp dataset, using the rdf standard.
 The yelp dataset is available at: https://www.yelp.com/dataset.
 
+### Who and Where
+The project was developed by: 
+<ul>
+  <li>Marcus Muzhen Austin</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
 ### claaudia tutorial
 
 https://git.its.aau.dk/CLAAUDIA/Compute_cloud_user_guides/src/branch/master/quick-start.md
