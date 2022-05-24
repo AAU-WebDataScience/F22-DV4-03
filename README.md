@@ -5,7 +5,7 @@ The goal of the project is to create a knowledge graph from the yelp dataset, us
 The yelp dataset is available at: https://www.yelp.com/dataset.
 
 ### How
-The folder code_to_create_graphs contains Python code to create 5 graphs, corresponding to the .json files obtained from Yelp (follow above link). 
+The folder code_to_generate_graph contains Python code to create 5 graphs, corresponding to the .json files obtained from Yelp (follow above link). 
 The rdflib package has been used to create N-Triples (.nt).
 
 | Original (Yelp) | Outcome (Graph) | DB name                     |
