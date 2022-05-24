@@ -16,7 +16,7 @@ The project was developed by fourth semester students:
 
 Under the supervision of:
 <ul>
-  <li>Matteo Lissandini</li> <a href="https://people.cs.aau.dk/~matteo/">
+  <li>Matteo Lissandini <a href="https://people.cs.aau.dk/~matteo/"></li> <a href="https://people.cs.aau.dk/~matteo/">
 </ul>
 
 ### claaudia tutorial
