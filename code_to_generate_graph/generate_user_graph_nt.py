@@ -61,23 +61,22 @@ with open('yelp_academic_dataset_user.json', encoding="utf8") as f:
         line = line.encode("ascii", "ignore") #removing unicode characters
         line = json.loads(line) #reading in the line from the .json file
         g = Graph() #creating a graph
-
-
+        #creating triple with predicate schema.org/givenName
         if line['name'] != None:
             g.add((URIRef(yelp_user + line['user_id']), 
                    schema.givenName, 
                    Literal(line['name'], datatype=XSD.string)))
-
+        #creating triple with predicate schema.org/reviewCount
         if line['review_count'] != None:
             g.add((URIRef(yelp_user + line['user_id']), 
                    schema.reviewCount, 
                    Literal(line['review_count'], datatype=XSD.int)))
-        #mapping to https://schema.org/startTime:
+        ##creating triple with predicate schema.org/startTime:
         if len(line['yelping_since']) > 0 and line['yelping_since'] != None:
             g.add((URIRef(yelp_user + line['user_id']), 
                    schema.startTime, 
                    Literal(line['yelping_since'], datatype=XSD.dateTime)))
-        #mapping to https://schema.org/knows:
+        ##creating triple with predicate schema.org/knows:
         if line['friends'] != None:
             #split the string in categories to a list, create list as catagory_list
             friends_list = string_seperate(line['friends'])
