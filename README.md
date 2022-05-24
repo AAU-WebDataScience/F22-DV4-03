@@ -4,6 +4,18 @@ Repository for the project of group cs-22-dv-4-03
 The goal of the project is to create a knowledge graph from the yelp dataset, using the rdf standard.
 The yelp dataset is available at: https://www.yelp.com/dataset.
 
+### How
+The folder code_to_create_graphs contains Python code to create 5 graphs, corresponding to the .json files obtained from Yelp (follow above link). 
+The rdflib package has been used to create N-Triples (.nt).
+
+| Original (Yelp) | Outcome (Graph) | DB name                     |
+| --------------- |:---------------:| ---------------------------:|
+| Business.json   | biz.nt          |http://www.yelpkg.com/biz    |
+| Review.json     | review.nt       |http://www.yelpkg.com/review |
+| User.json       | user.nt         |http://www.yelpkg.com/user   |
+| Tip.json        | tip.nt          |http://www.yelpkg.com/tip    |
+| Checkin.json    | checkin.nt      |http://www.yelpkg.com/checkin|
+
 ### Who and Where
 The project was developed by fourth semester students: 
 <ul>
@@ -16,8 +28,10 @@ The project was developed by fourth semester students:
 
 Under the supervision of:
 <ul>
-  <li> [Matteo Lissandini](https://people.cs.aau.dk/~matteo/) </li>
+  <li> Matteo Lissandini https://people.cs.aau.dk/~matteo/ </li>
 </ul>
+
+During the spring of 2022.
 
 ### claaudia tutorial
 
