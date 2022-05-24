@@ -5,11 +5,18 @@ The goal of the project is to create a knowledge graph from the yelp dataset, us
 The yelp dataset is available at: https://www.yelp.com/dataset.
 
 ### Who and Where
-The project was developed by: 
+The project was developed by fourth semester students: 
 <ul>
   <li>Marcus Muzhen Austin</li>
-  <li>Tea</li>
-  <li>Milk</li>
+  <li>Storm King-Isager</li>
+  <li>Flemming Steno Kjær</li>
+  <li>Maja Pipaluk Ploumann</li>
+  <li>Johnnie Pedersen</li>
+</ul>
+
+Under the supervision of:
+<ul>
+  <li>Matteo Lissandini</li> <a href="https://people.cs.aau.dk/~matteo/">
 </ul>
 
 ### claaudia tutorial
